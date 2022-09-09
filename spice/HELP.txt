@@ -1,0 +1,11 @@
+To read bsp file:
+-----------------
+from jplephem import spk
+k = spk.SPK.open('de440s_2030.bsp')
+print(k)
+# or: print(k.comments())
+k.close()
+
+To Excerpt bsp file:
+--------------------
+python3 -m jplephem excerpt 2022/1/1 2026/1/1 jup380s.bsp jup380s_2225.bsp
