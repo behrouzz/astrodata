@@ -1,3 +1,8 @@
+Download the latest High Precision Earth PCK File:
+--------------------------------------------------
+https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/earth_latest_high_prec.bpc
+
+
 To read bsp file:
 -----------------
 from jplephem import spk
@@ -6,10 +11,24 @@ print(k)
 # or: print(k.comments())
 k.close()
 
-To Excerpt bsp file:
---------------------
+
+Excerpt bsp file with jplephem:
+-------------------------------
 python3 -m jplephem excerpt 2022/1/1 2026/1/1 jup380s.bsp jup380s_2225.bsp
 
-Download the latest High Precision Earth PCK File:
---------------------------------------------------
-https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/earth_latest_high_prec.bpc
+
+Excerpt bsp file with spkmerge:
+-------------------------------
+Donwload for win64:
+https://naif.jpl.nasa.gov/pub/naif/utilities/PC_Windows_64bit/spkmerge.exe
+Then create a text file (ex. cmd_file.txt):
+
+LEAPSECONDS_KERNEL = naif0012.tls
+SPK_KERNEL         = de440_2030_earth_sun_moon.bsp
+SOURCE_SPK_KERNEL  = de440s.bsp
+  BEGIN_TIME       = 1 JAN 2020 00:00:00.000
+  END_TIME         = 1 JAN 2031 00:00:00.000
+  BODIES           = 0,10,3,399,301
+  
+  Now in the command line, run:
+  spkmerge cmd_file.txt
