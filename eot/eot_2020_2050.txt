@@ -5,7 +5,11 @@ TO  : 2050-01-01
 
 USING:
 ------
-Download 'eot_2020_2050.pickle'. Then use like this:
+Download 'eot_2020_2050.pickle' from here:
+
+https://github.com/behrouzz/astrodata/raw/main/eot/eot_2020_2050.pickle
+
+Then use like this:
    
 
 import pickle
