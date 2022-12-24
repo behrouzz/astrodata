@@ -9,6 +9,7 @@ Download 'eot_2020_2050.pickle'. Then use like this:
    
 
 import pickle
+import numpy as np
 from datetime import datetime
 
 t = datetime.utcnow() # your input time
